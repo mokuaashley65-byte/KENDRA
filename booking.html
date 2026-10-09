@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KENDY'S BITES - Book a Table</title>
+
+    <link rel="stylesheet" href="booking.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span class="chef">♨</span>
+
+            <div>
+                <h1>KENDY'S BITES</h1>
+                <p>GOOD FOOD • GREAT VIBES</p>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#">HOME</a>
+            <a href="#">MENU</a>
+            <a href="#">OUR STORY</a>
+            <a href="#" class="active">BOOK A TABLE</a>
+            <a href="#">CONTACT</a>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= BOOKING SECTION ================= -->
+
+    <main class="booking-section">
+
+        <!-- LEFT SIDE -->
+
+        <section class="booking-content">
+
+            <p class="small-title">RESERVATIONS</p>
+
+            <h2>Book Your Table</h2>
+
+            <p class="description">
+                Enjoy a great meal with your friends and family.
+                Reserve your table at KENDY'S BITES and experience
+                delicious food, warm service and a cozy atmosphere.
+            </p>
+
+
+            <!-- BOOKING FORM -->
+
+            <form class="booking-form">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label>Full Name</label>
+
+                        <div class="input-box">
+                            <i class="fa-regular fa-user"></i>
+                            <input type="text"
+                                   placeholder="Enter your full name">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Phone Number</label>
+
+                        <div class="input-box">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="tel"
+                                   placeholder="Enter your phone number">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label>Email Address</label>
+
+                        <div class="input-box">
+                            <i class="fa-regular fa-envelope"></i>
+                            <input type="email"
+                                   placeholder="Enter your email address">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Date</label>
+
+                        <div class="input-box">
+                            <i class="fa-regular fa-calendar"></i>
+                            <input type="date">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label>Time</label>
+
+                        <div class="input-box">
+                            <i class="fa-regular fa-clock"></i>
+
+                            <select>
+                                <option>Select time</option>
+                                <option>10:00 AM</option>
+                                <option>12:00 PM</option>
+                                <option>2:00 PM</option>
+                                <option>4:00 PM</option>
+                                <option>6:00 PM</option>
+                                <option>8:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Number of Guests</label>
+
+                        <div class="input-box">
+                            <i class="fa-solid fa-users"></i>
+
+                            <select>
+                                <option>1 Guest</option>
+                                <option>2 Guests</option>
+                                <option>3 Guests</option>
+                                <option>4 Guests</option>
+                                <option>5 Guests</option>
+                                <option>6+ Guests</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- SPECIAL REQUEST -->
+
+                <div class="form-group full">
+
+                    <label>Special Requests</label>
+
+                    <textarea
+                        placeholder="Any special requests? (e.g. birthday, window seat, etc.)"></textarea>
+
+                </div>
+
+
+                <!-- BUTTON -->
+
+                <button type="submit">
+                    <i class="fa-regular fa-calendar"></i>
+                    BOOK TABLE
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- ================= RIGHT SIDE ================= -->
+
+        <section class="restaurant-side">
+
+            <div class="restaurant-image"></div>
+
+
+            <!-- RESTAURANT INFORMATION -->
+
+            <div class="restaurant-info">
+
+                <div class="info-box">
+
+                    <h3>
+                        <i class="fa-regular fa-clock"></i>
+                        Opening Hours
+                    </h3>
+
+                    <p>
+                        Monday – Friday
+                        <span>10:00 AM – 10:00 PM</span>
+                    </p>
+
+                    <p>
+                        Saturday – Sunday
+                        <span>9:00 AM – 11:00 PM</span>
+                    </p>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <h3>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Visit Us
+                    </h3>
+
+                    <p>
+                        123 Foodie Lane,<br>
+                        Nairobi, Kenya
+                    </p>
+
+                    <p class="message">
+                        We can't wait to see you!
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="social">
+
+            <strong>KEEP IN TOUCH</strong>
+
+            <a href="#">
+                <i class="fa-brands fa-facebook-f"></i>
+                FACEBOOK
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+                INSTAGRAM
+            </a>
+
+        </div>
+
+        <p class="footer-text">
+            Good Food. Great Moments.
+        </p>
+
+    </footer>
+    <div class="success-notification" id="successNotification">
+    <div class="success-icon">
+        <i class="fa-solid fa-check"></i>
+    </div>
+
+    <div class="success-message">
+        <h3>Booking Confirmed!</h3>
+        <p>You have successfully booked a table.</p>
+        <span>We can't wait to see you!</span>
+    </div>
+
+    <button class="close-notification" id="closeNotification">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+</div>
+
+<script src="booking.js"></script>
+
+</body>
+</html>

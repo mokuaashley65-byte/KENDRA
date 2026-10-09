@@ -1,0 +1,660 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f4ef;
+    color: #222;
+    line-height: 1.6;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    width: 100%;
+    min-height: 75px;
+
+    background: #111;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.25);
+}
+
+
+/* LOGO */
+
+.logo {
+    color: white;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #d99a2b;
+}
+
+
+/* NAVIGATION */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+nav a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 12px 15px;
+    transition: 0.3s ease;
+}
+
+
+/* GOLD LINE UNDER LINK */
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 3px;
+    width: 0;
+    height: 2px;
+    background: #d99a2b;
+    transform: translateX(-50%);
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #d99a2b;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 60%;
+}
+
+nav a.active {
+    color: #d99a2b;
+}
+
+
+/* ================= MENU HERO ================= */
+
+.menu-header {
+    min-height: 430px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 70px 20px;
+    color: white;
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.60),
+            rgba(0, 0, 0, 0.70)
+        ),
+        url("images/menu-background.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+/* SMALL TITLE */
+
+.small-title {
+    color: #d99a2b;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+
+/* MAIN TITLE */
+
+.menu-header h1 {
+    font-size: clamp(40px, 6vw, 70px);
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+
+/* DESCRIPTION */
+
+.menu-header p:last-child {
+    max-width: 600px;
+    font-size: 17px;
+    color: #eee;
+}
+
+
+/* ================= CATEGORY BAR ================= */
+
+.categories {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 30px 20px;
+    background: white;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 75px;
+    z-index: 900;
+}
+
+
+/* CATEGORY BUTTON */
+
+.categories button {
+    background: transparent;
+    border: 1px solid #bbb;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+/* ACTIVE + HOVER */
+
+.categories button:first-child,
+.categories button:hover {
+    background: #111;
+    border-color: #111;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ================= MAIN MENU ================= */
+
+.menu-container {
+    width: 90%;
+    max-width: 1250px;
+    margin: auto;
+    padding: 45px 0 80px;
+}
+
+
+/* ================= SECTION TITLE ================= */
+
+.section-title {
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 1px;
+    margin: 45px 0 35px;
+}
+
+
+/* GOLD LINE */
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #d99a2b;
+    margin: 12px auto 0;
+    border-radius: 10px;
+}
+
+
+/* ================= FOOD GRID ================= */
+
+.menu-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+    gap: 30px;
+    margin-bottom: 65px;
+}
+
+
+/* ================= FOOD CARD ================= */
+
+.food-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #e7e2db;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+
+/* CARD HOVER */
+
+.food-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ================= FOOD IMAGE ================= */
+
+.food-card img {
+    width: 100%;
+    height: 245px;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+
+/* IMAGE ZOOM */
+
+.food-card:hover img {transform: scale(1.06);
+}
+
+
+/* IMAGE WRAPPER EFFECT */
+
+.food-card {
+    position: relative;
+}
+
+
+/* ================= FOOD INFORMATION ================= */
+
+.food-info {
+    padding: 22px;
+}
+
+
+/* FOOD NAME */
+
+.food-info h3 {
+    font-size: 21px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #171717;
+}
+
+
+/* DESCRIPTION */
+
+.food-info p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 72px;
+}
+
+
+/* ================= PRICE + BUTTON ================= */
+
+.food-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+}
+
+
+/* PRICE */
+
+.price {
+    color: #b9780d;
+    font-size: 19px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+
+/* ORDER BUTTON */
+
+.order-btn {
+    border: none;
+    background: #111;
+    color: white;
+    padding: 11px 15px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+/* BUTTON HOVER */
+
+.order-btn:hover {
+    background: #d99a2b;
+    color: #111;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(217, 154, 43, 0.3);
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 60px 20px 30px;
+    border-top: 3px solid #d99a2b;
+}
+
+
+footer h2 {
+    font-size: 25px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+
+footer > p {
+    color: #aaa;
+
+    font-size: 14px;
+}
+
+
+/* ================= SOCIAL LINKS ================= */
+
+.social {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 30px;
+
+    margin: 25px 0;
+}
+
+
+.social span {
+    color: #ddd;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.social span:hover {
+    color: #d99a2b;
+}
+
+
+.social i {
+    color: #d99a2b;
+
+    font-size: 18px;
+
+    margin-right: 7px;
+}
+
+
+/* COPYRIGHT */
+
+.copyright {
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #333;
+
+    font-size: 12px !important;
+
+    color: #777 !important;
+}
+
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 950px) {
+
+    .navbar {
+        padding: 0 30px;
+    }
+
+    nav {
+        gap: 2px;
+    }
+
+    nav a {
+        padding: 10px 8px;
+
+        font-size: 12px;
+    }
+
+
+    .menu-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 650px) {
+
+    /* NAVBAR */
+
+    .navbar {
+        position: relative;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        gap: 12px;
+
+        padding: 20px;
+    }
+
+
+    .logo {
+        font-size: 22px;
+    }
+
+
+    nav {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 2px;
+    }
+
+
+    nav a {
+        font-size: 11px;
+
+        padding: 8px 7px;
+    }
+
+
+    /* HERO */
+
+    .menu-header {
+        min-height: 360px;
+
+        padding: 60px 20px;
+
+        background-attachment: scroll;
+    }
+
+
+    .menu-header h1 {
+        font-size: 38px;
+
+        letter-spacing: 1px;
+    }
+
+
+    .small-title {
+        font-size: 11px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .menu-header p:last-child {
+        font-size: 14px;
+    }
+
+
+    /* CATEGORY BAR */
+
+    .categories {
+        position: relative;
+
+        top: 0;
+
+        gap: 8px;
+
+        padding: 20px 10px;
+    }
+
+
+    .categories button {
+        padding: 8px 13px;
+
+        font-size: 10px;
+    }
+
+
+    /* MENU */
+
+    .menu-container {
+        width: 92%;
+
+        padding-top: 20px;
+    }
+
+
+    .section-title {
+        font-size: 25px;
+
+        margin: 35px 0 25px;
+    }
+
+
+    /* ONE CARD PER ROW */
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+        margin-bottom: 45px;
+    }
+
+
+    /* IMAGE */
+
+    .food-card img {
+        height: 250px;
+    }
+
+
+    /* CARD */
+
+    .food-info {
+        padding: 20px;
+    }
+
+
+    .food-info h3 {
+        font-size: 20px;
+    }
+
+
+    /* FOOTER */
+
+    .social {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+}
+
+
+
+
+@media (max-width: 400px) {
+
+    .menu-header h1 {
+        font-size: 32px;
+    }
+
+
+    .food-bottom {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .price {
+        text-align: center;
+    }
+
+
+    .order-btn {
+        width: 100%;
+
+        padding: 13px;
+    }
+
+}

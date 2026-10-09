@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="profile.css">
+
+    <title>KENDY'S BITES - My Orders</title>
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo"> KENDY'S <span>BITES</span>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">MENU</a></li>
+        <li><a href="#">ORDERS</a></li>
+        <li><a href="#">CONTACT</a></li>
+    </ul>
+
+    <button class="profile-btn">Profile</button>
+</header>
+<main class="page">
+
+    <div class="welcome">
+        <h1>Welcome back, Ashley 👋</h1>
+        <p>Manage your orders, payments and delivery information.</p>
+    </div>
+
+
+    <!-- PROFILE -->
+
+    <section class="profile">
+        <div class="avatar">A</div>
+
+        <div class="profile-info">
+            <h2>Ashley Mokua</h2>
+            <p>📧mokuaongeri@gmail.com</p>
+            <p>📞 +254 700 000 000</p>
+
+        </div>
+        <button class="edit-btn">Edit Profile</button>
+    </section>
+
+
+
+    <!-- DASHBOARD -->
+
+    <div class="dashboard">
+        <section>
+
+                <!-- SUMMARY -->
+
+                <div class="card"> 
+
+    <div class="card-title"> 
+        <h2>🛒 Current Order</h2> 
+    </div> 
+
+    <div id="orderList"></div>
+
+    <!-- SUMMARY -->
+
+    <div class="summary"> 
+
+        <div class="summary-row"> 
+            <span>Subtotal</span> 
+            <span id="subtotal">KSh 0</span> 
+        </div>
+
+        <div class="summary-row"> 
+            <span>Delivery Fee</span> 
+            <span>KSh $2</span> 
+        </div> 
+
+        <div class="summary-row total"> 
+            <span>Total</span> 
+            <span id="grandTotal">KSh $2</span> 
+        </div> 
+
+        <button class="pay-btn">Proceed to Payment</button>
+
+    </div> 
+
+</div>
+
+            <!-- ORDER STATUS -->
+
+            <div class="card status">
+
+                <h3>Order Status</h3>
+
+                <div class="steps">
+
+                    <div class="step active">
+                        <div class="circle">✓</div> Order Placed</div>
+                    <div class="step active">
+                        <div class="circle">✓</div> Preparing</div>
+
+                    <div class="step active">
+                        <div class="circle">✓</div> Out for Delivery</div>
+
+                    <div class="step">
+                        <div class="circle">4</div>Delivered </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT SIDE -->
+
+        <aside>
+
+            <div class="card side-card">
+
+                <h3> Delivery Address</h3>
+
+                <p class="address">Ashley Mokua<br>Nyali, Mombasa<br>Kenya<br>+254 700 000 000</p>
+            </div>
+
+
+            <div class="card side-card">
+
+                <h3> Payment</h3>
+                <div class="payment">
+                    <span>M-Pesa</span>
+                    <strong>Paid</strong>
+                </div>
+
+                <br>
+
+                <div class="payment">
+                    <span>Amount</span>
+                    <strong>KSh 2,800</strong>
+                </div>
+
+            </div>
+
+
+            <div class="card side-card">
+
+                <h3>Order History</h3>
+
+                <div class="history-row">
+
+                    <div>
+                        <strong>#KB1020</strong>
+                        <br>
+                        <small>Chicken Burger</small>
+                    </div>
+
+                    <span class="delivered">
+                        Delivered
+                    </span>
+
+                </div>
+
+
+                <div class="history-row">
+
+                    <div>
+                        <strong>#KB1018</strong>
+                        <br>
+                        <small>Beef Pizza</small>
+                    </div>
+
+                    <span class="delivered">
+                        Delivered
+                    </span>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+
+    <!-- RECEIPT -->
+
+    <div class="receipt-container">
+
+        <div class="receipt" id="receipt">
+
+            <div class="receipt-header">
+
+                <h2>KENDY'S BITES</h2>
+
+                <p>RESTAURANT & FOOD DELIVERY</p>
+
+                <p>Mombasa, Kenya</p>
+
+            </div>
+
+
+            <div class="receipt-info">
+
+                <div>
+                    <strong>ORDER:</strong> #KB1024<br>
+                    <strong>CUSTOMER:</strong> Ashley Mokua
+                </div>
+
+                <div>
+                    <strong>DATE:</strong> 01/10/2026<br>
+                    <strong>PAYMENT:</strong> M-Pesa
+                </div>
+
+            </div>
+
+
+            <div class="receipt-items">
+
+                <div class="receipt-item">
+                    <span>2 × Chicken Pizza</span>
+                    <span>KSh 1,600</span>
+                </div>
+
+                <div class="receipt-item">
+                    <span>1 × Beef Burger</span>
+                    <span>KSh 700</span>
+                </div>
+
+                <div class="receipt-item">
+                    <span>2 × Coca Cola</span>
+                    <span>KSh 300</span>
+                </div>
+
+            </div>
+
+
+            <div class="receipt-total">
+
+                <div>
+                    <span>Subtotal</span>
+                    <span>KSh 2,600</span>
+                </div>
+
+                <div>
+                    <span>Delivery</span>
+                    <span>KSh 200</span>
+                </div>
+
+                <div class="grand-total">
+                    <span>TOTAL PAID</span>
+                    <span>KSh 2,800</span>
+                </div>
+
+            </div>
+
+
+            <div class="receipt-footer">
+
+                <p>Thank you for ordering from KENDY'S BITES!</p>
+
+                <p>We hope to see you again.</p>
+
+                <br>
+
+                <p>www.kendysbites.com</p>
+
+            </div>
+
+        </div>
+
+
+        <button class="download-btn" onclick="downloadReceipt()">Download Receipt</button>
+
+    </div>
+
+</main>
+
+
+<script src="profile.js"></script>
+
+</body>
+</html>
