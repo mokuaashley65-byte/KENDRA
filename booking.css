@@ -429,11 +429,20 @@ footer p {
     color: var(--light-gold);
 }
 
+/* =========================================
+   TABLETS AND SMALLER (900px and below)
+   Links drop below the Kendy's Bites heading
+========================================= */
+
 @media (max-width: 900px) {
     .navbar {
-        min-height: 85px;
-        padding: 18px 24px;
-        gap: 24px;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+        min-height: auto;
+        padding: 18px 24px 16px;
+        gap: 12px;
     }
 
     .logo h1 {
@@ -446,11 +455,18 @@ footer p {
     }
 
     nav {
-        gap: 14px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 100%;
+        margin-left: 0;
+        gap: 4px 20px;
     }
 
     nav a {
-        font-size: 11px;
+        padding: 6px 0;
+        font-size: 12px;
+        text-align: left;
     }
 
     .booking-section {
@@ -512,52 +528,40 @@ footer p {
     }
 }
 
+/* =========================================
+   PHONES (600px and below)
+========================================= */
+
 @media (max-width: 600px) {
     body {
         overflow-x: hidden;
     }
 
-    /* Phone nav: logo on the left, links beside it */
     .navbar {
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: space-between;
-        min-height: 75px;
-        padding: 14px 12px;
-        gap: 12px;
+        padding: 16px 16px 14px;
+        gap: 10px;
     }
 
     .logo {
-        flex: 0 0 auto;
-        gap: 8px;
+        gap: 6px;
     }
 
     .logo h1 {
-        font-size: 19px;
+        font-size: 22px;
         letter-spacing: 0;
     }
 
     .logo p {
-        font-size: 8px;
-        letter-spacing: 1px;
+        font-size: 9px;
+        letter-spacing: 1.5px;
     }
 
     nav {
-        display: flex;
-        flex: 1 1 auto;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        width: auto;
-        margin-left: 0;
-        gap: 2px 12px;
+        gap: 4px 18px;
     }
 
     nav a {
-        padding: 5px 0;
-        font-size: 11px;
-        text-align: right;
-        white-space: nowrap;
+        font-size: 12px;
     }
 
     .booking-section {
@@ -736,13 +740,17 @@ footer p {
     }
 }
 
+/* =========================================
+   VERY SMALL PHONES (380px and below)
+========================================= */
+
 @media (max-width: 380px) {
     .navbar {
-        padding: 14px 10px;
+        padding: 14px 12px;
     }
 
     .logo h1 {
-        font-size: 17px;
+        font-size: 20px;
     }
 
     .logo p {
@@ -751,11 +759,11 @@ footer p {
     }
 
     nav {
-        gap: 2px 9px;
+        gap: 2px 14px;
     }
 
     nav a {
-        font-size: 10px;
+        font-size: 11px;
         padding: 5px 0;
     }
 
