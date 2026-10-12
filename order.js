@@ -6,60 +6,72 @@ const buttons = document.querySelectorAll(
 
 console.log("Buttons found:", buttons.length);
 
-buttons.forEach(function(button) {
+buttons.forEach(function (button) {
 
-    button.addEventListener("click", function() {
+    button.addEventListener("click", function () {
 
-        const foodCard = button.parentElement;
+        // Get ONLY the food card whose button was clicked
+        const foodCard = button.closest(
+            ".menu-item, .menu1-item, .menu2-item, .menu3-item, .menu4-item"
+        );
 
         const name = foodCard.querySelector("h3").textContent.trim();
 
         const priceText = foodCard.querySelector("span").textContent;
 
-        const price = parseFloat(priceText.replace("$", "").trim());
+        const price = parseFloat(
+            priceText.replace("$", "").trim()
+        );
 
         const image = foodCard.querySelector("img").getAttribute("src");
 
-
         // Get existing orders
-        let orders = JSON.parse(localStorage.getItem("orders") || "[]");
+        let orders = JSON.parse(
+            localStorage.getItem("orders") || "[]"
+        );
 
-
-        // Check whether the food already exists
-        const existingOrder = orders.find(function(order) {
+        // Check if THIS food is already in the order
+        const existingOrder = orders.find(function (order) {
             return order.name === name;
         });
 
-
         if (existingOrder) {
 
+            // Increase quantity only for this food
             existingOrder.quantity++;
 
         } else {
 
+            // Add only the clicked food
             orders.push({
                 name: name,
                 price: price,
                 quantity: 1,
                 image: image
             });
-
         }
 
-
-        // Save orders
-        localStorage.setItem("orders", JSON.stringify(orders));
-
-
-        console.log("ORDER SAVED:", orders);
-
-        console.log(
-            "LOCAL STORAGE:",
-            localStorage.getItem("orders")
+        // Save updated order
+        localStorage.setItem(
+            "orders",
+            JSON.stringify(orders)
         );
 
+        // Calculate total
+        let total = 0;
 
-        alert(name + " added to your order!");
+        orders.forEach(function (order) {
+            total += order.price * order.quantity;
+        });
+
+        console.log("Orders:", orders);
+        console.log("Total: $" + total.toFixed(2));
+
+        alert(
+            name +
+            " added to your order!\nTotal: $" +
+            total.toFixed(2)
+        );
 
     });
 

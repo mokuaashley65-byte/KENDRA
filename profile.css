@@ -93,7 +93,11 @@ body {
     position: relative;
     overflow: hidden;
 
-    background: linear-gradient(135deg, #171717, #2d1717);
+    background: linear-gradient(
+        135deg,
+        #171717,
+        #2d1717
+    );
 
     color: white;
 
@@ -313,6 +317,85 @@ body {
 
 .food-price {
     font-weight: bold;
+    text-align: right;
+}
+
+
+/* ================= QUANTITY ================= */
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 10px;
+}
+
+.quantity-controls button {
+    width: 30px;
+    height: 30px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #171717;
+
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.quantity-controls button:hover {
+    background: #c62828;
+}
+
+.quantity-controls span {
+    min-width: 20px;
+
+    text-align: center;
+
+    font-weight: bold;
+}
+
+
+/* ================= REMOVE ORDER ================= */
+
+.remove-order {
+    display: block;
+
+    margin-top: 8px;
+    margin-left: auto;
+
+    border: none;
+
+    background: transparent;
+
+    color: #c62828;
+
+    cursor: pointer;
+
+    font-size: 12px;
+}
+
+.remove-order:hover {
+    text-decoration: underline;
+}
+
+
+/* ================= EMPTY ORDER ================= */
+
+.empty-order {
+    text-align: center;
+
+    padding: 30px 10px;
+
+    color: #888;
 }
 
 
@@ -368,6 +451,11 @@ body {
 
 .pay-btn:hover {
     background: #a51f1f;
+}
+
+.pay-btn:disabled {
+    background: #aaa;
+    cursor: not-allowed;
 }
 
 
@@ -596,7 +684,7 @@ body {
 }
 
 
-/* ================= DOWNLOAD BUTTON ================= */
+/* ================= PRINT BUTTON ================= */
 
 .download-btn {
     display: block;
@@ -671,6 +759,54 @@ body {
 
     .receipt {
         padding: 25px 15px;
+    }
+
+    .food {
+        align-items: flex-start;
+    }
+
+    .food img {
+        width: 60px;
+        height: 60px;
+    }
+
+}
+
+
+/* ================= PRINT RECEIPT ================= */
+
+@media print {
+
+    body * {
+        visibility: hidden;
+    }
+
+    #receipt,
+    #receipt * {
+        visibility: visible;
+    }
+
+    #receipt {
+        position: absolute;
+
+        left: 0;
+        top: 0;
+
+        width: 100%;
+
+        max-width: none;
+
+        margin: 0;
+
+        padding: 30px;
+
+        box-shadow: none;
+
+        border-radius: 0;
+    }
+
+    .download-btn {
+        display: none !important;
     }
 
 }
