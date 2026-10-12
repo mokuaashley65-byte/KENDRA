@@ -1,196 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="profile.css">
-
     <title>KENDY'S BITES - My Orders</title>
-
 </head>
-
-
 <body>
-
-
 <header class="navbar">
-
-    <div class="logo">
-        KENDY'S <span>BITES</span>
+    <div class="logo">KENDY'S <span>BITES</span>
     </div>
-
-
     <ul class="nav-links">
-
-        <li>
-            <a href="#">HOME</a>
-        </li>
-
-        <li>
-            <a href="#">MENU</a>
-        </li>
-
-        <li>
-            <a href="#">ORDERS</a>
-        </li>
-
-        <li>
-            <a href="#">CONTACT</a>
-        </li>
-
+        <li><a href="#">HOME</a></li>
+        <li>  <a href="#">MENU</a> </li>
+        <li> <a href="#">ORDERS</a></li>
+        <li>  <a href="#">CONTACT</a></li>
     </ul>
 
-
-    <button class="profile-btn">
-        Profile
-    </button>
-
+    <button class="profile-btn"> Profile</button>
 </header>
 
-
-
 <main class="page">
-
-
-    <!-- WELCOME -->
-
     <div class="welcome">
-
-        <h1>
-            Welcome back, Ashley 👋
-        </h1>
-
-        <p>
-            Manage your orders, payments and
-            delivery information.
-        </p>
-
+        <h1>   Welcome back, Ashley 👋 </h1>
+        <p> Manage your orders, payments and delivery information.</p>
     </div>
-
-
-
     <!-- PROFILE -->
 
     <section class="profile">
-
-        <div class="avatar">
-            A
-        </div>
-
-
+        <div class="avatar">  A</div>
         <div class="profile-info">
-
-            <h2>
-                Ashley Mokua
-            </h2>
-
-            <p>
-                📧mokuaongeri@gmail.com
-            </p>
-
-            <p>
-                📞 +254 700 000 000
-            </p>
+            <h2>   Ashley Mokua</h2>
+            <p>  📧mokuaongeri@gmail.com </p> 
+            <p>📞 +254 700 000 000 </p>
 
         </div>
 
 
-        <button class="edit-btn">
-            Edit Profile
-        </button>
-
+        <button class="edit-btn"> Edit Profile</button>
     </section>
-
-
-
     <!-- DASHBOARD -->
 
     <div class="dashboard">
-
-
         <section>
-
-
             <!-- CURRENT ORDER -->
-
-            <div class="card"
-                 id="currentOrderCard">
-
-
+            <div class="card" id="currentOrderCard">
                 <div class="card-title">
-
-                    <h2>
-                        🛒 Current Order
-                    </h2>
-
+                    <h2>   🛒 Current Order </h2>
                 </div>
-
-
-                <!--
-                    Food selected from the menu
-                    will automatically appear here
-                -->
-
                 <div id="orderList"></div>
-
-
 
                 <!-- SUMMARY -->
 
                 <div class="summary">
-
-
                     <div class="summary-row">
-
                         <span>
                             Subtotal
                         </span>
-
-                        <span id="subtotal">
-                            $0.00
-                        </span>
-
+                        <span id="subtotal"> $0.00 </span>
                     </div>
-
-
 
                     <div class="summary-row">
-
-                        <span>
-                            Delivery Fee
-                        </span>
-
-                        <span id="deliveryFee">
-                            $2.00
-                        </span>
-
+                        <span>  Delivery Fee </span>
+                        <span id="deliveryFee"> $2.00</span>
                     </div>
-
-
-
                     <div class="summary-row total">
-
-                        <span>
-                            Total
-                        </span>
-
+                        <span> Total</span>
                         <span id="grandTotal">
                             $0.00
                         </span>
-
                     </div>
-
-
 
                     <button
                         class="pay-btn"
-                        id="placeOrderBtn"
-                    >
+                        id="placeOrderBtn">
                         Place Order
                     </button>
 
@@ -217,26 +100,12 @@
 
                         <div class="circle">
                             ✓
-                        </div>
-
-                        Order Placed
-
-                    </div>
-
-
+                        </div>Order Placed </div>
                     <div class="step active">
-
                         <div class="circle">
                             ✓
-                        </div>
-
-                        Preparing
-
-                    </div>
-
-
+                        </div>Preparing</div>
                     <div class="step active">
-
                         <div class="circle">
                             ✓
                         </div>
@@ -309,24 +178,16 @@
                 <h3>
                     Payment
                 </h3>
-
-
                 <div class="payment">
 
                     <span>
                         M-Pesa
                     </span>
-
                     <strong>
                         Paid
                     </strong>
-
                 </div>
-
-
                 <br>
-
-
                 <div class="payment">
 
                     <span>
@@ -336,78 +197,10 @@
                     <strong id="paymentAmount">
                         $0.00
                     </strong>
-
                 </div>
-
-
             </div>
-
-
-
-            <!-- HISTORY -->
-
-            <div class="card side-card">
-
-                <h3>
-                    Order History
-                </h3>
-
-
-                <div class="history-row">
-
-                    <div>
-
-                        <strong>
-                            #KB1020
-                        </strong>
-
-                        <br>
-
-                        <small>
-                            Chicken Burger
-                        </small>
-
-                    </div>
-
-
-                    <span class="delivered">
-                        Delivered
-                    </span>
-
-                </div>
-
-
-
-                <div class="history-row">
-
-                    <div>
-
-                        <strong>
-                            #KB1018
-                        </strong>
-
-                        <br>
-
-                        <small>
-                            Beef Pizza
-                        </small>
-
-                    </div>
-
-
-                    <span class="delivered">
-                        Delivered
-                    </span>
-
-                </div>
-
-
-            </div>
-
 
         </aside>
-
-
     </div>
 
 
@@ -415,96 +208,39 @@
     <!-- RECEIPT -->
 
     <div
-        class="receipt-container"
-        id="receiptContainer"
-        style="display: none;"
-    >
-
-
-        <div
-            class="receipt"
-            id="receipt"
-        >
-
-
+        class="receipt-container" id="receiptContainer"style="display: none;">
+        <div class="receipt" id="receipt" >
             <!-- RECEIPT HEADER -->
 
             <div class="receipt-header">
-
-                <h2>
-                    KENDY'S BITES
-                </h2>
-
-                <p>
-                    RESTAURANT & FOOD DELIVERY
-                </p>
-
-                <p>
-                    Mombasa, Kenya
-                </p>
-
+                <h2> KENDY'S BITEs</h2>
+                <p> RESTAURANT & FOOD DELIVERY</p>
+                <p>  Mombasa, Kenya</p>
             </div>
-
-
-
             <!-- RECEIPT INFORMATION -->
 
             <div class="receipt-info">
-
-
                 <div>
-
-                    <strong>
-                        ORDER:
+                    <strong> ORDER:
                     </strong>
-
-                    <span id="receiptOrderNumber">
-                    </span>
-
+                    <span id="receiptOrderNumber"></span>
                     <br>
-
-
-                    <strong>
-                        CUSTOMER:
-                    </strong>
-
-                    Ashley Mokua
-
+                    <strong> CUSTOMER:
+                    </strong> Ashley Mokua
                 </div>
-
-
-
                 <div>
-
                     <strong>
                         DATE:
                     </strong>
-
                     <span id="receiptDate">
                     </span>
-
                     <br>
-
-
-                    <strong>
-                        PAYMENT:
-                    </strong>
-
-                    M-Pesa
-
+                    <strong> PAYMENT:
+                    </strong> M-Pesa
                 </div>
-
-
             </div>
-
-
-
             <!-- RECEIPT FOOD -->
-
-            <div
-                class="receipt-items"
-                id="receiptItems"
-            >
+            <div class="receipt-items"id="receiptItems">
             </div>
 
 
@@ -512,49 +248,18 @@
             <!-- RECEIPT TOTAL -->
 
             <div class="receipt-total">
-
-
                 <div>
-
-                    <span>
-                        Subtotal
-                    </span>
-
-                    <span id="receiptSubtotal">
-                        $0.00
-                    </span>
-
+                    <span> Subtotal</span>
+                    <span id="receiptSubtotal"> $0.00 </span>
                 </div>
-
-
-
                 <div>
-
-                    <span>
-                        Delivery
-                    </span>
-
-                    <span id="receiptDelivery">
-                        $2.00
-                    </span>
-
+                    <span> Delivery</span>
+                    <span id="receiptDelivery"> $2.00</span>
                 </div>
-
-
-
                 <div class="grand-total">
-
-                    <span>
-                        TOTAL
-                    </span>
-
-                    <span id="receiptGrandTotal">
-                        $0.00
-                    </span>
-
+                    <span>TOTAL</span>
+                    <span id="receiptGrandTotal">$0.00</span>
                 </div>
-
-
             </div>
 
 
@@ -562,47 +267,21 @@
             <!-- RECEIPT FOOTER -->
 
             <div class="receipt-footer">
-
                 <p>
                     Thank you for ordering from
                     KENDY'S BITES!
                 </p>
 
-                <p>
-                    We hope to see you again.
-                </p>
-
+                <p>We hope to see you again.</p>
                 <br>
-
-                <p>
-                    www.kendysbites.com
-                </p>
-
+                <p>www.kendysbites.com</p>
             </div>
-
-
         </div>
-
-
-
-        <button
-            class="download-btn"
-            id="printReceiptBtn"
-        >
+        <button class="download-btn" id="printReceiptBtn">
             🖨 Print Receipt
         </button>
-
-
     </div>
-
-
 </main>
-
-
-
 <script src="profile.js"></script>
-
-
 </body>
-
 </html>
