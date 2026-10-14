@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <aside class="sidebar">
+        <h2>KENDY'S BITES</h2>
+        <ul>
+            <li><i class="fa-solid fa-house"></i><a href="admin.html">Dashboard</a></li>
+            <li><i class="fa-solid fa-user"></i><a href="profile.html">Profile</a></li>
+            <li><i class="fa-solid fa-list"></i><a href="#">Orders</a></li>
+            <li><i class="fa-solid fa-book"></i><a href="#">Menu</a></li>
+            <li><i class="fa-solid fa-cog"></i><a href="#">Settings</a></li>
+        </ul>
+            <div class="logout">
+        <a href="#" id="logoutBtn">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </a>
+    </div>
+
+    </aside>
+    <main class="admin-main">
+       <header class="admin-header">
+
+    <div class="header-welcome">
+        <h2>Welcome, Admin</h2>
+        <p>Here's what's happening at Kendy's Bites today!</p>
+    </div>
+
+    <div class="admin-profile">
+
+        <div class="admin-avatar">
+            <i class="fa-solid fa-user"></i>
+        </div>
+
+        <div class="admin-profile-info">
+            <strong>Admin</strong>
+            <span>Administrator</span>
+        </div>
+
+        <i class="fa-solid fa-chevron-down profile-arrow"></i>
+
+    </div>
+
+</header>
+        <section class="dashboard-content">
+            <div class="dashboard-cards">
+                <section class="stats">
+                    <article class="card stat">
+                        <div class="stat-icon red"><i class="fa-solid fa-cart-shopping"></i></div>
+                        <div class="stat-body">
+                            <p class="stat-label">Total Orders</p>
+                            <p class="stat-value" id="totalOrders">0</p>
+                            <p class="stat-trend up">▲ 12% <span><br>vs. yesterday</span></p>
+                        </div>
+                    </article>
+                    <article class="card stat">
+                        <div class="stat-icon green">💵</div>
+                        <div class="stat-body">
+                            <p class="stat-label">Total Revenue</p>
+                            <p class="stat-value" id="totalRevenue">KSh 0</p>
+                            <p class="stat-trend up">▲ 18% <span><br>vs. yesterday</span></p>
+                        </div>
+                    </article>
+                    <article class="card stat">
+                        <div class="stat-icon purple">📈</div>
+                        <div class="stat-body">
+                            <p class="stat-label">Total Profit</p>
+                            <p class="stat-value" id="totalProfit">KSh 0</p>
+                            <p class="stat-trend up">▲ 20% <span><br>vs. yesterday</span></p>
+                        </div>
+                    </article>
+                    <article class="card stat">
+                        <div class="stat-icon blue">👤</div>
+                        <div class="stat-body">
+                            <p class="stat-label">New Customers</p>
+                            <p class="stat-value" id="newCustomers">0</p>
+                            <p class="stat-trend up">▲ 25% <span><br>vs. yesterday</span></p>
+                        </div>
+                    </article>
+                </section>
+            </div>
+            <section class="dashboard-content1">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h2 class="stat-label1">Sales & Profits Today</h2>
+                        <select id="chartperiod">
+                            <option value="today">Today</option>
+                            <option value="week">This Week</option>
+                            <option value="month">This Month</option>
+                        </select>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="salesChart"></canvas>
+                    </div>
+                </div>
+                <div class="card stat2">
+    <div class="stat-body">
+        <h2 class="stat-label1">Quick Actions</h2>
+
+        <div class="quick-actions">
+
+            <button class="quick-btn" id="newOrderBtn">
+                <i class="fa-solid fa-cart-plus"></i>
+                <span>New Order</span>
+            </button>
+
+            <button class="quick-btn" id="viewOrdersBtn">
+                <i class="fa-solid fa-list"></i>
+                <span>View Orders</span>
+            </button>
+
+            <button class="quick-btn" id="menuBtn">
+                <i class="fa-solid fa-utensils"></i>
+                <span>Menu</span>
+            </button>
+
+            <button class="quick-btn" id="reportsBtn">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Reports</span>
+            </button>
+
+        </div>
+    </div>
+</div>
+                <div class="card stat3">
+                    <div class="top-selling-header">
+                        <h2>Top Selling Items</h2>
+                        <a href="#">View All</a>
+                    </div>
+                    <div class="selling-item">
+                        <div class="item-info">
+                            <div class="item-icon"><img src="bbq chicken pizza.png" alt="Chicken Pizza"></div>
+                            <div>
+                                <h3>Chicken Pizza</h3>
+                                <p>42 orders</p>
+                            </div>
+                        </div>
+                        <span class="item-price">KSh 1,260</span>
+                    </div>
+                    <div class="selling-item">
+                        <div class="item-info">
+                            <div class="item-icon"><img src="brioche bugger.png" alt="bugger"></div>
+                            <div>
+                                <h3>Beef Burger</h3>
+                                <p>35 orders</p>
+                            </div>
+                        </div>
+                        <span class="item-price">KSh 1,050</span>
+                    </div>
+                    <div class="selling-item">
+                        <div class="item-info">
+                            <div class="item-icon"><img src="chicken marsala.png" alt="Fried Chicken"></div>
+                            <div>
+                                <h3>Fried Chicken</h3>
+                                <p>29 orders</p>
+                            </div>
+                        </div>
+                        <span class="item-price">KSh 870</span>
+                    </div>
+                    <div class="selling-item">
+                        <div class="item-info">
+                            <div class="item-icon"><img src="iced latte coffee.png" alt="Iced Coffee Latte"></div>
+                            <div>
+                                <h3>Iced Coffee Latte</h3>
+                                <p>24 orders</p>
+                            </div>
+                        </div>
+                        <span class="item-price">KSh 720</span>
+                    </div>
+                </div>
+            </section>
+            <div class="orders-activity-row">
+                <section class="recent-orders">
+                    <div class="recent-orders-header">
+                        <div>
+                            <h2>Recent Orders</h2>
+                            <p>Latest orders placed at Kendy's Bites</p>
+                        </div>
+                        <a href="#">View All Orders</a>
+                    </div>
+                    <div class="orders-table" id="ordersTable">
+                        <div class="order-row order-heading">
+                            <span>Order ID</span>
+                            <span>Customer</span>
+                            <span>Items</span>
+                            <span>Total</span>
+                            <span>Status</span>
+                            <span>Time</span>
+                        </div>
+                        <div class="order-row">
+                            <span>#KB1024</span>
+                            <div class="customer">
+                                <div class="customer-icon"><i class="fa-solid fa-user"></i></div>
+                                <span>Brian Otieno</span>
+                            </div>
+                            <span>Chicken Pizza</span>
+                            <span class="order-total">KSh 1,260</span>
+                            <span class="order-status completed">Completed</span>
+                            <span>10:42 AM</span>
+                        </div>
+                        <div class="order-row">
+                            <span>#KB1023</span>
+                            <div class="customer">
+                                <div class="customer-icon"><i class="fa-solid fa-user"></i></div>
+                                <span>Mary Wanjiku</span>
+                            </div>
+                            <span>Beef Burger</span>
+                            <span class="order-total">KSh 1,050</span>
+                            <span class="order-status pending">Pending</span>
+                            <span>10:25 AM</span>
+                        </div>
+                        <div class="order-row">
+                            <span>#KB1022</span>
+                            <div class="customer">
+                                <div class="customer-icon"><i class="fa-solid fa-user"></i></div>
+                                <span>Kevin Mwangi</span>
+                            </div>
+                            <span>Fried Chicken</span>
+                            <span class="order-total">KSh 870</span>
+                            <span class="order-status preparing">Preparing</span>
+                            <span>10:10 AM</span>
+                        </div>
+                        <div class="order-row">
+                            <span>#KB1021</span>
+                            <div class="customer">
+                                <div class="customer-icon"><i class="fa-solid fa-user"></i></div>
+                                <span>Sarah Akinyi</span>
+                            </div>
+                            <span>Chicken Rice</span>
+                            <span class="order-total">KSh 720</span>
+                            <span class="order-status completed">Completed</span>
+                            <span>9:48 AM</span>
+                        </div>
+                    </div>
+                        <div class="dashboard-message">
+        <i class="fa-solid fa-circle-check"></i>
+        <div>
+            <strong>Kendy's Bites is running smoothly</strong>
+            <p>All orders and activities are up to date.</p>
+        </div>
+        <span>Updated just now</span>
+    </div>
+
+                </section>
+                <section class="live-activity">
+                    <div class="live-activity-header">
+                        <div>
+                            <h2>Live Activity</h2>
+                            <p>What's happening right now</p>
+                        </div>
+                        <div class="live-indicator">
+                            <span></span>
+                            Live
+                        </div>
+                    </div>
+                    <div class="activity-list" id="activityList">
+                        <div class="activity-item" >
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+    <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kendy's Bites - Admin Login</title>
+
+    <link rel="stylesheet" href="admin-login.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="login-page">
+
+        <div class="login-card">
+
+            <div class="login-logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+
+                <h1>KENDY'S BITES</h1>
+
+                <p>Restaurant Management System</p>
+            </div>
+
+
+            <div class="login-heading">
+
+                <h2>Admin Login</h2>
+
+                <p>
+                    Sign in to access your dashboard
+                </p>
+
+            </div>
+
+
+            <form id="adminLoginForm">
+
+                <div class="input-group">
+
+                    <label for="adminEmail">
+                        Email Address
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="adminEmail"
+                            placeholder="Enter admin email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="adminPassword">
+                        Password
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="adminPassword"
+                            placeholder="Enter password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="password-toggle"
+                        >
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="login-options">
+
+                    <label class="remember">
+
+                        <input
+                            type="checkbox"
+                            id="rememberMe"
+                        >
+
+                        <span>Remember me</span>
+
+                    </label>
+
+                    <a href="#" id="forgotPassword">
+                        Forgot password?
+                    </a>
+
+                </div>
+
+
+                <p
+                    id="loginError"
+                    class="login-error"
+                ></p>
+
+
+                <button
+                    type="submit"
+                    class="login-button"
+                >
+
+                    <i class="fa-solid fa-right-to-bracket"></i>
+
+                    <span>Login to Dashboard</span>
+
+                </button>
+
+            </form>
+
+
+            <div class="login-footer">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <span>
+                    Authorized personnel only
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="admin-login.js"></script>
+
+</body>
+</html>
