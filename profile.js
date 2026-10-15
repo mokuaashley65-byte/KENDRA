@@ -14,10 +14,28 @@ let orders = JSON.parse(
 
 console.log("ORDERS RECEIVED:", orders);
 
-const deliveryFee = 2;
+// CHANGE THIS to your real delivery fee (in KSh)
+const deliveryFee = 200;
 
 let receiptGenerated = false;
 let currentOrderNumber = null;
+
+
+// ===============================
+// FORMAT CURRENCY (KSh)
+// ===============================
+
+function formatKSh(amount) {
+
+    return "KSh " +
+        Number(amount).toLocaleString(
+            "en-KE",
+            {
+                maximumFractionDigits: 0
+            }
+        );
+
+}
 
 
 // ===============================
@@ -38,9 +56,9 @@ function displayOrders() {
             </p>
         `;
 
-        subtotalElement.textContent = "$0.00";
-        grandTotalElement.textContent = "$0.00";
-        paymentAmount.textContent = "$0.00";
+        subtotalElement.textContent = formatKSh(0);
+        grandTotalElement.textContent = formatKSh(0);
+        paymentAmount.textContent = formatKSh(0);
 
         placeOrderBtn.disabled = true;
 
@@ -69,7 +87,7 @@ function displayOrders() {
                     <h3>${order.name}</h3>
 
                     <p>
-                        $${order.price.toFixed(2)}
+                        ${formatKSh(order.price)}
                         each
                     </p>
 
@@ -98,7 +116,7 @@ function displayOrders() {
                 <div class="food-price">
 
                     <strong>
-                        $${itemTotal.toFixed(2)}
+                        ${formatKSh(itemTotal)}
                     </strong>
 
                     <button
@@ -118,13 +136,13 @@ function displayOrders() {
     const total = subtotal + deliveryFee;
 
     subtotalElement.textContent =
-        "$" + subtotal.toFixed(2);
+        formatKSh(subtotal);
 
     grandTotalElement.textContent =
-        "$" + total.toFixed(2);
+        formatKSh(total);
 
     paymentAmount.textContent =
-        "$" + total.toFixed(2);
+        formatKSh(total);
 }
 
 
@@ -198,7 +216,17 @@ placeOrderBtn.addEventListener(
 
         savePlacedOrder();
 
+        // build the receipt first (it needs the items)
         generateReceipt();
+
+        // then clear the current order straight away
+        orders = [];
+
+        localStorage.removeItem("orders");
+
+        displayOrders();
+
+        console.log("CURRENT CART CLEARED");
     }
 );
 
@@ -337,7 +365,7 @@ function generateReceipt() {
                 </span>
 
                 <span>
-                    $${itemTotal.toFixed(2)}
+                    ${formatKSh(itemTotal)}
                 </span>
 
             </div>
@@ -371,15 +399,15 @@ function generateReceipt() {
 
 
     receiptSubtotal.textContent =
-        "$" + subtotal.toFixed(2);
+        formatKSh(subtotal);
 
 
     receiptDelivery.textContent =
-        "$" + deliveryFee.toFixed(2);
+        formatKSh(deliveryFee);
 
 
     receiptGrandTotal.textContent =
-        "$" + total.toFixed(2);
+        formatKSh(total);
 
 
     receiptContainer.style.display =
@@ -421,6 +449,8 @@ printReceiptBtn.addEventListener(
 
 // ===============================
 // AFTER PRINT
+// (the cart is already cleared when the order is placed,
+//  so this only hides the receipt)
 // ===============================
 
 window.addEventListener(
@@ -431,43 +461,53 @@ window.addEventListener(
             return;
         }
 
-
-        orders = [];
-
-
-        localStorage.removeItem(
-            "orders"
-        );
-
-
         receiptContainer.style.display =
             "none";
 
-
         receiptGenerated = false;
-
 
         currentOrderNumber = null;
 
-
-        displayOrders();
-
-
-        console.log(
-            "CURRENT CART CLEARED"
-        );
-
-
-        alert(
-            "Order completed! Your current order has been cleared."
-        );
+        console.log("RECEIPT CLOSED");
 
     }
 );
 
 
 // ===============================
+// RELOAD CART WHEN PAGE IS SHOWN
+// (fixes old cart showing after Back button or another tab)
+// ===============================
+
+function reloadOrders() {
+
+    orders = JSON.parse(
+        localStorage.getItem("orders") || "[]"
+    );
+
+    displayOrders();
+}
+
+window.addEventListener("pageshow", function(event) {
+
+    // only re-read when no receipt is on screen
+    if (!receiptGenerated) {
+        reloadOrders();
+    }
+
+});
+
+window.addEventListener("storage", function(event) {
+
+    if (event.key === "orders" && !receiptGenerated) {
+        reloadOrders();
+    }
+
+});
+
+
+// ===============================
 // INITIAL LOAD
 // ===============================
 
-displayOrders();
+displayOrders();    

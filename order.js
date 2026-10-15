@@ -19,9 +19,9 @@ buttons.forEach(function (button) {
 
         const priceText = foodCard.querySelector("span").textContent;
 
-        const price = parseFloat(
-            priceText.replace("$", "").trim()
-        );
+       const price = parseFloat(
+    priceText.replace(/[^0-9.]/g, "")
+);
 
         const image = foodCard.querySelector("img").getAttribute("src");
 
@@ -65,12 +65,12 @@ buttons.forEach(function (button) {
         });
 
         console.log("Orders:", orders);
-        console.log("Total: $" + total.toFixed(2));
+        console.log("Total: KSh " + total.toLocaleString());
 
-        alert(
-            name +
-            " added to your order!\nTotal: $" +
-            total.toFixed(2)
+alert(
+    name +
+    " added to your order!\nTotal: KSh " +
+    total.toLocaleString()
         );
 
     });

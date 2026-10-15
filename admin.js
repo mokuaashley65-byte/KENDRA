@@ -1,4 +1,7 @@
 console.log("ADMIN.JS IS RUNNING");
+console.log(updateDashboard);
+console.log(getPlacedOrders);
+
 
 
 // ========================================
@@ -963,6 +966,7 @@ if (logoutBtn) {
         window.location.replace("admin-login.html");
 
     });
+}
 // ========================================
 // QUICK ACTIONS
 // ========================================

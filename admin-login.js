@@ -5,8 +5,8 @@ console.log("ADMIN LOGIN JS IS RUNNING");
 // ADMIN LOGIN DETAILS
 // ========================================
 
-const ADMIN_EMAIL = "admin@kendysbites.com";
-const ADMIN_PASSWORD = "admin123";
+const ADMIN_EMAIL = "ashkendy@gmail.com";
+const ADMIN_PASSWORD = "kendybites06";
 
 
 // ========================================
@@ -40,7 +40,8 @@ const forgotPassword =
 // ========================================
 
 if (
-    localStorage.getItem("adminLoggedIn") === "true"
+    localStorage.getItem("adminLoggedIn") === "true" &&
+    localStorage.getItem("rememberAdmin") === "true"
 ) {
 
     window.location.href = "admin.html";
@@ -138,7 +139,7 @@ loginForm.addEventListener(
             loginError.textContent =
                 "Incorrect email or password.";
 
-            passwordInput.value = "ashadmin06";
+            passwordInput.value = "";
 
             passwordInput.focus();
 
